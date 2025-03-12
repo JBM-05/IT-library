@@ -31,7 +31,7 @@ const LeftSideBar = () => {
         {departments.map((department) => (
           <button
             key={department.name}
-            onClick={() => {setSelectedDepartment(department.name);fetchSubjects(department.key)}}
+            onClick={() => {setSelectedDepartment(department.name);fetchSubjects(department.key); setShowLeft(false)}}
             className={`w-full text-left p-2 rounded-lg transition-all duration-300 
               ${
                 selectedDepartment === department.name
