@@ -2,9 +2,18 @@ import { DataContext } from "../DownloadSection";
 import { useContext } from "react";
 
 const MiddleSideBar = () => {
-  const { showLeft,showRight, setShowLeft, loading, subjects, selectedDepartment ,selectedSubject,fetchFiles,setShowRight  } =
-    useContext(DataContext);
-    
+  const {
+    showLeft,
+    showRight,
+    setShowLeft,
+    loading,
+    subjects,
+    selectedDepartment,
+    selectedSubject,
+    fetchFiles,
+    setShowRight
+  } = useContext(DataContext);
+
   return (
     <div
       className={`bg-transparent lg:w-[30%] w-[100%]  overflow-y-auto scrollbar-hidden lg:border-r py-4  text-white space-y-4 relative lg:block ${
@@ -26,25 +35,32 @@ const MiddleSideBar = () => {
             {subjects.map((subject) => (
               <li
                 key={subject.$id}
-                className={`w-full text-left p-2 rounded-lg  cursor-pointer 
-                       ${
-                    selectedSubject ===subject.SubjectName
-                  ? "bg-[#1e293b] text-white" 
-                  : "bg-transparent text-gray-300 hover:bg-gray-800"
-              }`}
-                  onClick={()=>{
-                    fetchFiles(subject.SubjectName!.trim());setShowRight(true); }}
+                className={`w-full text-left p-2 rounded-lg cursor-pointer bg-[#1e293b]
+                  ${
+                    selectedSubject === subject.SubjectName
+                      ? "bg-[#1e293b] text-white"
+                      : "lg:bg-transparent text-gray-300 hover:bg-gray-800"
+                  }`}
+                onClick={() => {
+                 
+                  fetchFiles(subject.SubjectName!);
+                  setShowRight(true);
+                }}
               >
                 <span>{subject.SubjectName}</span>
               </li>
             ))}
           </ul>
         ) : loading ? (
-        <p className=" text-white w-full p-2 text-center">  Loading Subjects...</p>
-         
-        ) : selectedDepartment?( <p>No files found for "{selectedDepartment.toUpperCase()}".</p>):
-          (<p>Select a department to view files.</p>)
-        }
+          <p className=" text-white w-full p-2 text-center">
+            {" "}
+            Loading Subjects...
+          </p>
+        ) : selectedDepartment ? (
+          <p>No files found for "{selectedDepartment}".</p>
+        ) : (
+          <p>Select a department to view files.</p>
+        )}
       </div>
     </div>
   );

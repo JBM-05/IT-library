@@ -15,6 +15,7 @@ interface DataContextType {
   selectedSubject: string | null;
   setShowLeft: React.Dispatch<React.SetStateAction<boolean>>;
   setShowRight: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedSubject: React.Dispatch<React.SetStateAction<string | null>>;
   loading: boolean;
   fetchSubjects: (category: string) => Promise<void>;
   fetchFiles: (category: string) => Promise<void>;
@@ -41,6 +42,7 @@ export const DataContext = createContext<DataContextType>({
   fetchFiles: async () => {},
   selectedDepartment: null,
   selectedSubject: null,
+  setSelectedSubject: () => {},
   subjects: [],
   files: [],
 });
@@ -58,7 +60,7 @@ const DownloadSection = () => {
     setLoading(true);
     setError(null);
     setSubjects([]); // Clear files before fetching new ones
-
+    
     try {
       // Fetch files from Appwrite Database based on category
       const response = await databases.listDocuments(
@@ -76,6 +78,7 @@ const DownloadSection = () => {
       }));
 
       setSubjects(fetchedSubjects); 
+      
       setSelectedDepartment(category); // Store selected category
     } catch (err) {
       console.error("Error fetching files:", err);
@@ -88,14 +91,14 @@ const DownloadSection = () => {
     setLoading(true);
     setError(null);
     setFiles([]); 
-
+    setSelectedSubject(category);
     try {
  
       const response = await databases.listDocuments(
         databaseId, 
         collectionId2,
         [
-          Query.equal("SubjectName", category), 
+          Query.equal("SubjectName", category.trim()), 
         ]
       );
 
@@ -107,7 +110,7 @@ const DownloadSection = () => {
       }));
     
       setFiles(fetchedFiles);
-      setSelectedSubject(category); // Store selected category
+       // Store selected category
     } catch (err) {
       console.error("Error fetching files:", err);
       setError("Failed to load files. Please try again.");
@@ -137,6 +140,7 @@ const DownloadSection = () => {
             fetchFiles,
             selectedDepartment,
             selectedSubject,
+            setSelectedSubject,
           }}
         >
           <LeftSideBar />

@@ -53,15 +53,15 @@ const RightSideBar = () => {
             {files.map((file) => (
               <li
                 key={file.fileid}
-                className="flex  items-center w-full text-left  rounded-lg "
+                className="flex  items-center w-full text-left  rounded-lg  bg-[#1e293b] lg:bg-transparent"
               >
                 <span className="w-[70%] text-left px-2 py-3 rounded-lg  cursor-pointer 
-                   bg-transparent text-gray-300 hover:bg-gray-800"
+                   lg:bg-transparent  text-gray-300 hover:bg-[#1e293b]"
                   >{file.filename}</span>
                   <button className=" px-2 py-3 rounded-lg  cursor-pointer 
-                   bg-transparent text-gray-300 hover:bg-gray-800 ml-2" onClick={()=>{downloadFile(file.fileid!,file.filename!)}}>Download</button>
+                  lg:bg-transparent  text-gray-300 hover:bg-[#1e293b] ml-2" onClick={()=>{downloadFile(file.fileid!,file.filename!)}}>Download</button>
                      <button className=" px-2 py-3 rounded-lg  cursor-pointer 
-                   bg-transparent text-gray-300 hover:bg-gray-800 ml-2" onClick={()=>{viewFile(file.fileid!)}}>View</button>
+                   lg:bg-transparent  text-gray-300 hover:bg-[#1e293b] ml-2" onClick={()=>{viewFile(file.fileid!)}}>View</button>
               </li>
               
             ))}
