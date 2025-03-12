@@ -69,7 +69,7 @@ const RightSideBar = () => {
         ) : loading ? (
         <p className=" text-white w-full p-2 text-center">  Loading files...</p>
          
-        ) : selectedSubject?( <p>No files found for "{selectedSubject.toUpperCase()}".</p>):
+        ) : selectedSubject?( <p>No files found for "{selectedSubject}".</p>):
           (<p>Select a department to view files.</p>)
         }
       </div>
