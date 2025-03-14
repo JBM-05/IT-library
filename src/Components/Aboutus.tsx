@@ -49,20 +49,26 @@ const Aboutus = () => {
             <h3 className="text-lg font-semibold text-blue-400 mb-2">
               Who am I ?
             </h3>
-            <p className="text-gray-300 text-sm">
-              Hi there! I'm a passionate developer with expertise in building
-              educational platforms and digital libraries. The IT Library
-              project stems from my commitment to making educational resources
-              more accessible and organized for students.
+            <p className="text-gray-300 text-sm ">
+            
+              I’m a dedicated software engineer with a passion for web
+              development, application development, and cybersecurity. Currently
+              pursuing my degree at Benghazi University, I have honed my skills
+              through self-taught learning and hands-on experience in full-stack
+              development. My expertise spans JavaScript, React, Node.js, SQL,
+              NoSQL, and  Flutter, allowing me to build efficient and
+              secure applications.
             </p>
             <p className="text-gray-300 text-sm mt-4">
-              With over 5 years of experience in web development and a
-              background in computer science, I understand the challenges
-              students face when accessing study materials. This platform is
-              designed to streamline that process and create a better learning
-              experience.
+              
+              I’m committed to creating impactful projects that enhance
+              accessibility and user experience, particularly in education. My
+              projects, including digital libraries and database-driven
+              platforms, aim to streamline information access for students.
+              Beyond development, I’m deeply interested in cybersecurity,
+              ensuring that the solutions I build are not only functional but
+              also secure and resilient.
             </p>
-
             {/* Skills & Technologies */}
             <h3 className="text-lg font-semibold text-blue-400 mt-4">
               Skills & Technologies
