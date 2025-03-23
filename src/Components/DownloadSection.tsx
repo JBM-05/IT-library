@@ -7,7 +7,6 @@ import { Query } from "appwrite";
 const collectionId = import.meta.env.VITE_COLLECTION_ID1;
 const collectionId2 = import.meta.env.VITE_COLLECTION_ID2;
 const databaseId = import.meta.env.VITE_DATABASE_ID;
-// Create the context outside the component
 interface DataContextType {
   showLeft: boolean;
   showRight: boolean;
@@ -31,7 +30,6 @@ interface receivedSubjects {
   $collectionId: string;
   $databaseId: string;
 }
-
 export const DataContext = createContext<DataContextType>({
   showLeft: false,
   showRight: false,
@@ -46,12 +44,13 @@ export const DataContext = createContext<DataContextType>({
   subjects: [],
   files: [],
 });
-
 const DownloadSection = () => {
   const [showLeft, setShowLeft] = useState(false);
   const [showRight, setShowRight] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [selectedDepartment, setSelectedDepartment] = useState<string | null>(null);
+  const [selectedDepartment, setSelectedDepartment] = useState<string | null>(
+    null
+  );
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
   const [, setError] = useState<string | null>(null);
   const [subjects, setSubjects] = useState<receivedSubjects[]>([]);
@@ -59,27 +58,17 @@ const DownloadSection = () => {
   const fetchSubjects = async (category: string) => {
     setLoading(true);
     setError(null);
-    setSubjects([]); // Clear files before fetching new ones
-    
+    setSubjects([]);
     try {
-      // Fetch files from Appwrite Database based on category
-      const response = await databases.listDocuments(
-        databaseId, // Replace with your database ID
-        collectionId, // Replace with your collection ID
-        [
-          Query.equal("Department", category), // Query files by category
-        ]
-      );
-
-      // Extract files from database response
+      const response = await databases.listDocuments(databaseId, collectionId, [
+        Query.equal("Department", category),
+      ]);
       const fetchedSubjects = response.documents.map((document) => ({
         ...document,
-        fileId: document.fileId, // Reference to fileId
+        fileId: document.fileId,
       }));
-
-      setSubjects(fetchedSubjects); 
-      
-      setSelectedDepartment(category); // Store selected category
+      setSubjects(fetchedSubjects);
+      setSelectedDepartment(category);
     } catch (err) {
       console.error("Error fetching files:", err);
       setError("Failed to load files. Please try again.");
@@ -90,27 +79,19 @@ const DownloadSection = () => {
   const fetchFiles = async (category: string) => {
     setLoading(true);
     setError(null);
-    setFiles([]); 
+    setFiles([]);
     setSelectedSubject(category);
     try {
- 
       const response = await databases.listDocuments(
-        databaseId, 
+        databaseId,
         collectionId2,
-        [
-          Query.equal("SubjectName", category.trim()), 
-        ]
+        [Query.equal("SubjectName", category.trim())]
       );
-
-      // Extract files from database response
       const fetchedFiles = response.documents.map((document) => ({
         ...document,
-        fileId: document.fileId, // Reference to fileId
-        // Ensure SubjectName is included
+        fileId: document.fileId,
       }));
-    
       setFiles(fetchedFiles);
-       // Store selected category
     } catch (err) {
       console.error("Error fetching files:", err);
       setError("Failed to load files. Please try again.");
@@ -151,5 +132,4 @@ const DownloadSection = () => {
     </div>
   );
 };
-
 export default DownloadSection;

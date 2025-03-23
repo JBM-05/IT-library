@@ -1,6 +1,7 @@
 import { storage } from "../../Config/AppwriteConfig";
 import { useContext } from "react";
 import { DataContext } from "../DownloadSection";
+import {motion} from "framer-motion";
 const RightSideBar = () => {
   const {  showRight,setShowRight, loading,files,selectedSubject  } = useContext(DataContext);
   const storageId=import.meta.env.VITE_STORAGE_ID;
@@ -34,6 +35,19 @@ const RightSideBar = () => {
       console.error("Error viewing file:", err);
     }
   };
+  const parents = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+  const children = {
+    hidden: { opacity: 0, scale: 1.1 },
+    visible: { opacity: 1, scale: 1 },
+  };
   return (
     <div className={`bg-transparent lg:w-[45%] w-[100%]   py-4 text-white space-y-4  lg:block ${
       showRight ? "block" : "hidden"
@@ -49,9 +63,9 @@ const RightSideBar = () => {
       </button>
       <div className="px-4">
         {selectedSubject && files.length > 0 ? (
-          <ul>
+          <motion.ul variants={parents} initial="hidden" animate="visible" >
             {files.map((file) => (
-              <li
+              <motion.li variants={children} 
                 key={file.fileid}
                 className="flex  items-center w-full text-left  rounded-lg  bg-[#1e293b] lg:bg-transparent"
               >
@@ -62,10 +76,10 @@ const RightSideBar = () => {
                   lg:bg-transparent  text-gray-300 hover:bg-[#1e293b] ml-2" onClick={()=>{downloadFile(file.fileid!,file.filename!)}}>Download</button>
                      <button className=" px-2 py-3 rounded-lg  cursor-pointer 
                    lg:bg-transparent  text-gray-300 hover:bg-[#1e293b] ml-2" onClick={()=>{viewFile(file.fileid!)}}>View</button>
-              </li>
+              </motion.li>
               
             ))}
-          </ul>
+          </motion.ul>
         ) : loading ? (
         <p className=" text-white w-full p-2 text-center">  Loading files...</p>
          

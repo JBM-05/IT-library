@@ -50,7 +50,6 @@ const Aboutus = () => {
               Who am I ?
             </h3>
             <p className="text-gray-300 text-sm ">
-            
               I’m a dedicated software engineer with a passion for web
               development, application development, and cybersecurity. Currently
               pursuing my degree at Benghazi University, I have honed my skills
@@ -59,8 +58,7 @@ const Aboutus = () => {
               NoSQL, and  Flutter, allowing me to build efficient and
               secure applications.
             </p>
-            <p className="text-gray-300 text-sm mt-4">
-              
+            <p className="text-gray-300 text-sm mt-4">  
               I’m committed to creating impactful projects that enhance
               accessibility and user experience, particularly in education. My
               projects, including digital libraries and database-driven
@@ -69,7 +67,7 @@ const Aboutus = () => {
               ensuring that the solutions I build are not only functional but
               also secure and resilient.
             </p>
-            {/* Skills & Technologies */}
+           
             <h3 className="text-lg font-semibold text-blue-400 mt-4">
               Skills & Technologies
             </h3>

@@ -1,5 +1,5 @@
 {
-  "home":"https://JBM-05.github.io/IT-library",
+  "home": "https://JBM-05.github.io/IT-library",
   "name": "library",
   "private": true,
   "version": "0.0.0",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "appwrite": "^17.0.0",
+    "framer-motion": "^12.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0"
