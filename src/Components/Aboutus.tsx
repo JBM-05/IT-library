@@ -22,25 +22,49 @@ const Aboutus = () => {
 
             {/* Social Icons */}
             <div className="flex justify-center gap-4 mt-4 text-gray-400">
-              <FaGithub
-                className="hover:text-white transition duration-300 cursor-pointer"
-                size={24}
-              />
-              <a href="www.linkedin.com/in/jamaleddin-muntasser-4b436b305">
-                {" "}
+              <a
+                href="https://github.com/JBM-05"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub
+                  className="hover:text-white transition duration-300 cursor-pointer"
+                  size={24}
+                />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/jamaleddin-muntasser-4b436b305"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedin
                   className="hover:text-blue-500 transition duration-300 cursor-pointer"
                   size={24}
                 />
               </a>
-              <FaFacebook
-                className="hover:text-blue-400 transition duration-300 cursor-pointer"
-                size={24}
-              />
-              <FaInstagram
-                className="hover:text-pink-500 transition duration-300 cursor-pointer"
-                size={24}
-              />
+
+              <a
+                href="https://www.facebook.com/jbm.muntasser.12/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook
+                  className="hover:text-blue-400 transition duration-300 cursor-pointer"
+                  size={24}
+                />
+              </a>
+
+              <a
+                href="https://www.instagram.com/05_jbm"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram
+                  className="hover:text-pink-500 transition duration-300 cursor-pointer"
+                  size={24}
+                />
+              </a>
             </div>
           </div>
 
@@ -55,10 +79,10 @@ const Aboutus = () => {
               pursuing my degree at Benghazi University, I have honed my skills
               through self-taught learning and hands-on experience in full-stack
               development. My expertise spans JavaScript, React, Node.js, SQL,
-              NoSQL, and  Flutter, allowing me to build efficient and
-              secure applications.
+              NoSQL, and Flutter, allowing me to build efficient and secure
+              applications.
             </p>
-            <p className="text-gray-300 text-sm mt-4">  
+            <p className="text-gray-300 text-sm mt-4">
               I’m committed to creating impactful projects that enhance
               accessibility and user experience, particularly in education. My
               projects, including digital libraries and database-driven
@@ -67,7 +91,7 @@ const Aboutus = () => {
               ensuring that the solutions I build are not only functional but
               also secure and resilient.
             </p>
-           
+
             <h3 className="text-lg font-semibold text-blue-400 mt-4">
               Skills & Technologies
             </h3>
