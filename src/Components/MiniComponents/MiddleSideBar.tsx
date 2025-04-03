@@ -56,7 +56,7 @@ const MiddleSideBar = () => {
               <motion.li
                 variants={children}
                 key={subject.$id}
-                className={`w-full text-left p-2 rounded-lg cursor-pointer bg-[#1e293b]
+                className={`w-full text-left p-2 mb-2 rounded-lg cursor-pointer bg-[#1e293b]
                   ${
                     selectedSubject === subject.SubjectName
                       ? "bg-[#1e293b] text-white"
