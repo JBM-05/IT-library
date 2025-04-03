@@ -33,7 +33,7 @@ const MiddleSideBar = () => {
         showLeft || showRight ? "hidden " : "block"
       } scrollbar-hidden `}
     >
-      <div className="relative">
+      <div className="relative h-[8%]">
         <h2 className="text-lg font-semibold pt-2 pb-4 border-b border-white text-left px-4 ">
           Courses
         </h2>
@@ -44,9 +44,10 @@ const MiddleSideBar = () => {
           filter
         </button>
       </div>
+      <div>
         {selectedDepartment && subjects.length > 0 ? (
           <motion.ul
-            className="px-4 scrollbar-hidden overflow-y-auto max-h-[667px]"
+            className="px-4 scrollbar-hidden overflow-y-auto max-h-[92%]"
             variants={parents}
             initial="hidden"
             animate="visible"
@@ -70,6 +71,7 @@ const MiddleSideBar = () => {
               </motion.li>
             ))}
           </motion.ul>
+          
         ) : loading ? (
           <p className=" text-white w-full p-2 text-center">
             {" "}
@@ -80,6 +82,7 @@ const MiddleSideBar = () => {
         ) : (
           <p>Select a department to view files.</p>
         )}
+      </div>
       </div>
   );
 };

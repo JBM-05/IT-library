@@ -9,6 +9,7 @@ const LeftSideBar = () => {
     {name:"Computer Science",key:"CS"},
     {name:"Information System",key:"IS"},
     {name:"Artificial Intelligence",key:"AI"},
+    {name:"Networks",key:"CN"},
   ];
 
   return (
@@ -17,7 +18,7 @@ const LeftSideBar = () => {
         showLeft ? "block" : "hidden"
       } overflow-y-auto`}
     >
-      <h2 className="text-lg font-semibold pt-2 pb-4 border-b border-white text-left px-4">
+      <h2 className="text-lg font-semibold pt-2 pb-4 border-b border-white text-left px-4 h-[8%]">
         Department
       </h2>
       <button
@@ -27,7 +28,7 @@ const LeftSideBar = () => {
       >
         close
       </button>
-      <div className="flex flex-col space-y-2 px-4">
+      <div className="flex flex-col space-y-2 px-4 ">
         {departments.map((department) => (
           <button
             key={department.name}

@@ -48,7 +48,7 @@ const RightSideBar = () => {
         showRight ? "block" : "hidden"
       } scrollbar-hidden `}
     >
-    <div className="relative ">
+    <div className="relative h-[8%]">
       <h2 className="text-lg font-semibold pt-2 pb-4 border-b  border-white text-left px-4">
         Study Materials
       </h2>
@@ -61,7 +61,7 @@ const RightSideBar = () => {
       </div>
       
         {selectedSubject && files.length > 0 ? (
-          <motion.ul className="px-4 scrollbar-hidden overflow-y-auto max-h-[667px]" variants={parents} initial="hidden" animate="visible">
+          <motion.ul className="px-4 scrollbar-hidden overflow-y-auto h-[92%]" variants={parents} initial="hidden" animate="visible">
             {files.map((file) => (
               <motion.li
                 variants={children}
@@ -76,13 +76,13 @@ const RightSideBar = () => {
                 {/* Buttons (Always Aligned Right) */}
                 <div className="flex justify-end space-x-2 mt-2">
                   <button
-                    className="px-2 py-2 rounded-lg cursor-pointer z-10 lg:bg-transparent text-gray-300 lg:hover:bg-[#0f172a]"
+                    className="px-2 py-2 rounded-lg cursor-pointer z-10 lg:bg-transparent bg-[#0f172a] text-gray-300 lg:hover:bg-[#0f172a]"
                     onClick={() => downloadFile(file.fileid!, file.filename!)}
                   >
                     Download
                   </button>
                   <button
-                    className="px-2 py-2 rounded-lg cursor-pointer z-10 lg:bg-transparent text-gray-300 lg:hover:bg-[#0f172a]"
+                    className="px-2 py-2 rounded-lg cursor-pointer z-10 lg:bg-transparent bg-[#0f172a] text-gray-300 lg:hover:bg-[#0f172a]"
                     onClick={() => viewFile(file.fileid!)}
                   >
                     View
