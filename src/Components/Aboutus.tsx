@@ -15,7 +15,7 @@ const Aboutus = () => {
           <div className="bg-gray-800 p-6 rounded-lg shadow-md text-center w-full md:w-1/3">
             <div className="w-32 h-32 bg-gray-700 rounded-lg mx-auto mb-4 flex items-center justify-center">
               {/* Placeholder for Image */}
-              <img src={img2} alt="img" />
+              <img className="rounded" src={img2} alt="img" />
             </div>
             <h3 className="text-xl font-semibold">Jamaleddin Muntasser</h3>
             <p className="text-blue-400">Full Stack Developer</p>
