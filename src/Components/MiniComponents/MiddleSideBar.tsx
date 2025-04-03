@@ -1,6 +1,7 @@
 import { DataContext } from "../DownloadSection";
 import { useContext } from "react";
 import { motion } from "framer-motion";
+import "./styling.css"
 const MiddleSideBar = () => {
   const {
     showLeft,
@@ -11,7 +12,7 @@ const MiddleSideBar = () => {
     selectedDepartment,
     selectedSubject,
     fetchFiles,
-    setShowRight
+    setShowRight,
   } = useContext(DataContext);
   const parents = {
     hidden: { opacity: 0 },
@@ -28,24 +29,32 @@ const MiddleSideBar = () => {
   };
   return (
     <div
-      className={`bg-transparent lg:w-[30%] w-[100%]  overflow-y-auto scrollbar-hidden lg:border-r py-4  text-white space-y-4 relative lg:block ${
+      className={` bg-transparent lg:w-[30%] w-[100%]  overflow-y-auto scrollbar-hidden lg:border-r py-4  text-white space-y-4 relative lg:block ${
         showLeft || showRight ? "hidden " : "block"
-      }`}
+      } scrollbar-hidden overflow-y-auto`}
     >
-      <h2 className="text-lg font-semibold pt-2 pb-4 border-b border-white text-left px-4 ">
-        Courses
-      </h2>
-      <button
-        onClick={() => setShowLeft(true)}
-        className="absolute top-0 right-2 px-4 py-2 text-white rounded-full bg-blue-500 hover:bg-blue-600 transition lg:hidden"
-      >
-        filter
-      </button>
+      <div className="relative">
+        <h2 className="text-lg font-semibold pt-2 pb-4 border-b border-white text-left px-4 ">
+          Courses
+        </h2>
+        <button
+          onClick={() => setShowLeft(true)}
+          className="absolute top-0 right-2 px-4 py-2 text-white rounded-full bg-blue-500 hover:bg-blue-600 transition lg:hidden"
+        >
+          filter
+        </button>
+      </div>
       <div className="px-4">
         {selectedDepartment && subjects.length > 0 ? (
-          <motion.ul variants={parents} initial="hidden" animate="visible">
+          <motion.ul
+            className="scrollbar-hidden overflow-y-auto"
+            variants={parents}
+            initial="hidden"
+            animate="visible"
+          >
             {subjects.map((subject) => (
-              <motion.li variants={children}
+              <motion.li
+                variants={children}
                 key={subject.$id}
                 className={`w-full text-left p-2 rounded-lg cursor-pointer bg-[#1e293b]
                   ${
@@ -54,7 +63,6 @@ const MiddleSideBar = () => {
                       : "lg:bg-transparent text-gray-300 hover:bg-gray-800"
                   }`}
                 onClick={() => {
-                 
                   fetchFiles(subject.SubjectName!);
                   setShowRight(true);
                 }}

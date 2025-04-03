@@ -15,7 +15,7 @@ const LeftSideBar = () => {
     <div
       className={` w-[100%] lg:w-[25%] bg-transparent text-white py-4 space-y-4 lg:border-r  lg:block relative ${
         showLeft ? "block" : "hidden"
-      }`}
+      } overflow-y-auto`}
     >
       <h2 className="text-lg font-semibold pt-2 pb-4 border-b border-white text-left px-4">
         Department
