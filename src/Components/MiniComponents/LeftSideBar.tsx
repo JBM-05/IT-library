@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { DataContext } from "../DownloadSection";
+import "./styling.css"
 const LeftSideBar = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const { showLeft, setShowLeft, fetchSubjects } = useContext(DataContext);
@@ -29,7 +30,7 @@ const LeftSideBar = () => {
           close
         </button>
       </div>
-      <div className="flex flex-col space-y-2 px-4 h-[92%] ">
+      <div className="flex flex-col space-y-2 px-4 max-h-[92%] ">
         {departments.map((department) => (
           <button
             key={department.name}
