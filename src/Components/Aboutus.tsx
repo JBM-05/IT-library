@@ -71,7 +71,7 @@ const Aboutus = () => {
                 rel="noopener noreferrer"
               >
                 <FaTelegram
-                  className="hover:text-blu-300 transition duration-300 cursor-pointer"
+                  className="hover:text-blue-300 transition duration-300 cursor-pointer"
                   size={24}
                 />
               </a>
