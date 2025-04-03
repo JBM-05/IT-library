@@ -10,7 +10,7 @@ const LeftSideBar = () => {
     { name: "Computer Science", key: "CS" },
     { name: "Information System", key: "IS" },
     { name: "Artificial Intelligence", key: "AI" },
-    { name: "Networks", key: "CN" },
+    { name: "Computer Networks", key: "CN" },
   ];
 
   return (
