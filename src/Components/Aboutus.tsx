@@ -4,7 +4,7 @@ const Aboutus = () => {
   return (
     <div
       id="about"
-      className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-[100px]  "
+      className="min-h-screen bg-gray-900 text-white flex items-center justify-center px-6 py-[200px]  "
     >
       <div className="max-w-4xl w-full bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg shadow-lg p-6">
         <h2 className="text-3xl font-bold text-center relative after:content-[''] after:block after:w-20 after:h-1 after:bg-gradient-to-r after:from-purple-500 after:to-blue-500 after:mt-2 after:mx-auto after:mb-4">
