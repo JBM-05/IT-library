@@ -46,9 +46,9 @@ const RightSideBar = () => {
     <div
       className={`bg-transparent lg:w-[45%] w-[100%]   py-4 text-white space-y-4  lg:block ${
         showRight ? "block" : "hidden"
-      } scrollbar-hidden overflow-y-auto`}
+      } scrollbar-hidden `}
     >
-    <div className="relative">
+    <div className="relative ">
       <h2 className="text-lg font-semibold pt-2 pb-4 border-b  border-white text-left px-4">
         Study Materials
       </h2>
@@ -59,9 +59,9 @@ const RightSideBar = () => {
         Close
       </button>
       </div>
-      <div className="px-4">
+      
         {selectedSubject && files.length > 0 ? (
-          <motion.ul className="overflow-y-auto scrollbar-hidden" variants={parents} initial="hidden" animate="visible">
+          <motion.ul className="px-4 scrollbar-hidden overflow-y-auto max-h-[667px]" variants={parents} initial="hidden" animate="visible">
             {files.map((file) => (
               <motion.li
                 variants={children}
@@ -102,7 +102,7 @@ const RightSideBar = () => {
           <p>Select a department to view files.</p>
         )}
       </div>
-    </div>
+    
   );
 };
 export default RightSideBar;

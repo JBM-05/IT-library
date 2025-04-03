@@ -106,7 +106,7 @@ const DownloadSection = () => {
       className="bg-gray-900 h-screen w-full bg-cover bg-left text-white relative pt-[100px] pb-[100px]"
     >
       <div
-        className="border h-[667px] border-white/20 bg-slate-200/10 rounded-[0.75rem] w-[90%] mx-auto text-center flex relative 
+        className="border h-[667px]  border-white/20 bg-slate-200/10 rounded-[0.75rem] w-[90%] mx-auto text-center flex relative 
         transition-all duration-300 hover:shadow-[0_0_30px_5px_rgba(59,130,246,0.6)] overflow-x-auto overflow-y-auto scrollbar-hidden"
       >
         <DataContext.Provider

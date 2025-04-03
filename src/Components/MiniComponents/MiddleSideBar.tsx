@@ -31,7 +31,7 @@ const MiddleSideBar = () => {
     <div
       className={` bg-transparent lg:w-[30%] w-[100%]  overflow-y-auto scrollbar-hidden lg:border-r py-4  text-white space-y-4 relative lg:block ${
         showLeft || showRight ? "hidden " : "block"
-      } scrollbar-hidden overflow-y-auto`}
+      } scrollbar-hidden `}
     >
       <div className="relative">
         <h2 className="text-lg font-semibold pt-2 pb-4 border-b border-white text-left px-4 ">
@@ -44,10 +44,9 @@ const MiddleSideBar = () => {
           filter
         </button>
       </div>
-      <div className="px-4">
         {selectedDepartment && subjects.length > 0 ? (
           <motion.ul
-            className="scrollbar-hidden overflow-y-auto"
+            className="px-4 scrollbar-hidden overflow-y-auto max-h-[667px]"
             variants={parents}
             initial="hidden"
             animate="visible"
@@ -82,7 +81,6 @@ const MiddleSideBar = () => {
           <p>Select a department to view files.</p>
         )}
       </div>
-    </div>
   );
 };
 
