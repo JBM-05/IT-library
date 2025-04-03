@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { DataContext } from "../DownloadSection";
-import "./styling.css"
+import "./styling.css";
 const LeftSideBar = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const { showLeft, setShowLeft, fetchSubjects } = useContext(DataContext);

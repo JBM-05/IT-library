@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram , FaTelegram } from "react-icons/fa";
 import img2 from "../Img/img2.jpg";
 const Aboutus = () => {
   return (
@@ -62,6 +62,16 @@ const Aboutus = () => {
               >
                 <FaInstagram
                   className="hover:text-pink-500 transition duration-300 cursor-pointer"
+                  size={24}
+                />
+              </a>
+              <a
+                href="https://t.me/Jamaleddin_Muntasser"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTelegram
+                  className="hover:text-blu-300 transition duration-300 cursor-pointer"
                   size={24}
                 />
               </a>
